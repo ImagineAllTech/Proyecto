@@ -1,0 +1,107 @@
+/*    ABRO FONTS   */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500&display=swap');
+/*    CIERRO FONTS */
+
+
+:root{
+  --primary-color: #bbb;
+  --secondary-color: #878787;
+  
+  --negro: #000000;
+  --blanco: #fff;
+  
+  --naranja-uno: #ffa601;
+  --amarillo: #fff705;
+
+  --bs-gray: #6c757d;
+  --bs-gray-dark: #343a40;
+  --bs-gray-100: #f8f9fa;
+  --bs-gray-200: #e9ecef;
+  --bs-gray-300: #dee2e6;
+  --bs-gray-400: #ced4da;
+  --bs-gray-500: #adb5bd;
+  --bs-gray-600: #6c757d;
+  --bs-gray-700: #495057;
+  --bs-gray-800: #343a40;
+  --bs-gray-900: #212529;
+  
+  --primary-font: 'Roboto';
+  --secondary-font: sans-serif;
+  --terciary-font: 'Open Sans';
+  --font-size-1: 0.0625em; /* calc(var(--font-size-1) * number) */
+  --font-size-10: 0.625em;
+  --font-size-14: 0.875em;
+  --font-size-15: 0.9375em;
+  --font-size-16: 1em;
+  --font-size-20: 1.25em;
+  --font-size-21: 1.3125em;
+  --font-size-22: 1.375em;
+  --font-size-24: 1.5em;
+  --font-size-25: 1.5625em;
+  --font-weight-normal: 400;
+  --font-weight-h: 500;
+  --font-weight-max: 800;
+  --line-height: 1.5;
+  --border-radius-8: 0.5em;
+  --border-radius-12: 0.75em;
+  --border-radius-16: 1em;
+  --border-radius-100: 100%;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; 
+}*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+  width: 100%;
+  color: var(--blanco);
+  font-size: var(--size-font-16);
+}
+.html::-webkit-scrollbar{
+  width: 8px;
+  
+}.html::-webkit-scrollbar-thumb{
+  background: var(--naranja-uno);
+  border-radius: 12px;
+  scroll-behavior: smooth;
+}
+body {
+  font-family: var(--primary-font) , sans-serif;
+  line-height: var(--line-height);
+  font-weight: var(--font-weight);
+}
+
+li{
+}
+ol,
+ul {
+  list-style-type: none;
+  padding-left: 2rem;
+}
+a{
+  text-decoration: none;
+}
+hr{
+  margin: 1rem 0;
+  color: inherit;
+  opacity: 0.5;
+}
+h6,h5,h4,h3,h2,h1{
+  font-weight: var(--font-weight-h);
+}
+
+.mode__dark{
+  color: var(--blanco);
+}
+.mode__light{
+  color: var(--negro);
+}

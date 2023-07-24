@@ -1,0 +1,21 @@
+﻿# Cómo instalar Red Hat Enterprise Linux en un servidor
+
+## Descarga la imagen ISO de Red Hat Enterprise Linux:
+
+1. Accede al sitio web oficial de Red Hat y descarga la imagen ISO más reciente de Red Hat Enterprise Linux para servidores.
+2. Crea un medio de instalación:
+    1. Graba la imagen ISO en un DVD o crea un dispositivo USB de arranque con la imagen.
+    2. Arranca desde el medio de instalación:
+        1. Inserta el DVD o conecta el dispositivo USB de arranque a tu servidor y reinicia la máquina. Asegúrate de que el servidor esté configurado para arrancar desde el medio elegido.
+    3. Selecciona la opción de instalación: En la pantalla de inicio, elige la opción "Install Red Hat Enterprise Linux" para iniciar el proceso de instalación.
+
+## Configuración de la instalación:
+
+1. **Idioma y teclado:** Selecciona el idioma y la disposición del teclado que prefieras para la instalación.
+2. **Almacenamiento:** Configura las particiones y el almacenamiento para tu servidor. Puedes elegir entre diferentes opciones, como el uso de particiones predeterminadas o personalizadas.
+3. **Red:** Configura la conexión de red para tu servidor, incluyendo la configuración de la dirección IP, la máscara de red y la puerta de enlace.
+4. **Repositorio:** Especifica el repositorio de software desde el cual se instalarán los paquetes de Red Hat Enterprise Linux. Puedes seleccionar un repositorio local o utilizar un repositorio en línea.
+5. **Cuenta de usuario:** Crea una cuenta de usuario para acceder al servidor. Proporciona un nombre de usuario, una contraseña segura y otros detalles necesarios.
+6. **Seguridad:** Configura las opciones de seguridad adicionales, como la configuración del firewall y la habilitación o deshabilitación de servicios según tus necesidades.
+7. **Instalación:** Revisa todas las configuraciones realizadas y, una vez que estés satisfecho, inicia el proceso de instalación.
+8. **Finalización:** Después de que se complete la instalación, reinicia el servidor y realiza las configuraciones adicionales necesarias según tus requisitos.

@@ -1,0 +1,47 @@
+﻿# Instalación de Docker
+
+## Actualización de repositorios
+
+1. Abra una terminal y ejecute el comando `sudo yum update`.
+
+## Descarga e instalación de Docker
+
+1. Ejecute el comando `sudo yum install docker` para instalar Docker en su máquina virtual.
+
+## Inicio del servicio Docker
+
+1. Ejecute `sudo systemctl start docker` para iniciar el servicio Docker.
+
+## Verificación de la instalación
+
+1. Ejecute `sudo docker run hello-world` para comprobar que Docker está instalado correctamente.
+
+# Configuración del entorno LAMP
+
+## Descarga de imágenes
+
+1. Ejecute `sudo docker pull httpd` para descargar la imagen de Apache desde el repositorio oficial.
+2. Ejecute `sudo docker pull mysql` para descargar la imagen de MySQL/MariaDB desde el repositorio oficial.
+3. Ejecute `sudo docker pull php` para descargar la imagen de PHP desde el repositorio oficial.
+
+## Creación del archivo Docker Compose
+
+1. Cree un archivo llamado `docker-compose.yml` y defina los servicios de Apache, MySQL/MariaDB y PHP con sus respectivas configuraciones.
+
+## Inicio de contenedores
+
+1. Ejecute `sudo docker-compose up -d` para iniciar los contenedores en segundo plano.
+
+# Configuración adicional
+
+## Configuración de Apache
+
+1. Acceda al contenedor de Apache y configure las opciones adicionales según sus necesidades, como la configuración de hosts virtuales, la seguridad y la gestión de módulos.
+
+## Configuración de MySQL/MariaDB
+
+1. Acceda al contenedor de MySQL/MariaDB y configure las opciones adicionales, como el nombre de usuario y la contraseña del administrador, la creación de bases de datos y la configuración de privilegios.
+
+## Desarrollo web
+
+1. Coloque sus archivos web en el directorio apropiado dentro del contenedor de Apache para que sean accesibles a través del servidor web.

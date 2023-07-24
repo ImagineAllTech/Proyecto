@@ -1,0 +1,117 @@
+﻿# Estudio de los diferentes roles de los usuarios del servidor
+
+1. **Operador:** se encarga de visualizar y buscar errores y fallas del sistema. Si encuentra algún problema, llama al administrador del sistema. En tiempo real, busca ayudar a los usuarios.
+2. **Administrativo de aplicación:** gestiona la aplicación en tiempo real.
+    
+    Tareas:
+    
+    - Conocer perfectamente la aplicación web.
+    - Inicializar y administrar la aplicación.
+    - Ayudar y respaldar al usuario.
+    - Realizar mantenimiento a la aplicación.
+    - Restaurar y respaldar los datos.
+3. **Usuario:** ingresa al sistema con un usuario normal. Si accede, entonces puede ser juez.
+4. **Administradores del sistema:** encargados del mantenimiento fuera del tiempo real.
+    
+    4.1. **Administrador de Bases de Datos:** se encarga de administrar las bases de datos del servidor.
+    
+    - Solo obtiene acceso a las bases de datos.
+    - Crea copias de seguridad de respaldo.
+    - Restaura la base de datos a partir de copias de seguridad.
+    
+    4.2. **Administrador del servidor y el sistema:** es el encargado de administrar y configurar el servidor LAMP. También respalda el sistema por posibles errores.
+    
+    Tareas:
+    
+    - Instalar y configurar el servidor LAMP.
+    - Gestionar los usuarios y permisos del sistema.
+    - Configurar y mantener la base de datos.
+    - Supervisar y solucionar los problemas relacionados con el servidor.
+5. **Programadores:** son quienes programan los sistemas, crean las bases de datos, instalan el servidor LAMP e implementan la aplicación al sistema.
+    
+    Tareas:
+    
+    - Crear el código base de la aplicación.
+    - Gestionar las bases de datos, roles, usuarios y grupos.
+
+# Relevamiento y justificación del sistema operativo a utilizar tanto en las terminales de los usuarios como en el servidor
+
+## Usuarios
+
+Para la utilización de las tablets se recomiendan dos opciones:
+
+1. **Galaxy Tab A7 Lite**
+    - Pantalla: 8.7" (220.5mm).
+    - CPU: 2.3GHz, 1.8GHz.
+    - Memoria: 3GB RAM.
+    - Almacenamiento: 32GB.
+    
+    Link:
+    https://www.samsung.com/latin/tablets/galaxy-tab-a/galaxy-tab-a7-lite-gray-32gb-sm-t220nzaatpa/#specs
+    
+2. **Lenovo Tab M10 Plus 3era Gen (10.6", Android)**
+    - Pantalla: 7,45 mm.
+    - Dos CPU opcionales: Qualcomm Snapdragon 680 o MediaTek Helio G80.
+    - Memoria: hasta 6GB.
+    - Almacenamiento: desde 32GB a 128GB.
+    
+    Link:
+    https://www.lenovo.com/uy/es/tablets/android-tablets/lenovo-tab-series/Tab-M10-Plus-Gen-3/p/LEN103L0010
+    
+
+## Servidor
+
+Se recomiendan dos opciones sobre qué sistemas operativos utilizar.
+
+1. **Red Hat Enterprise Linux**
+    
+    ¿Por qué Red Hat Enterprise Linux?
+    La empresa Red Hat es quien administra, desarrolla y creó tanto Red Hat Enterprise Linux (RHEL) como Fedora. Sin embargo, Fedora es un sistema más abierto y que hoy en día está siendo modificado y apoyado con código por parte de la comunidad.
+    
+    RHEL ofrece características y funcionalidades diseñadas específicamente para la empresa. Su enfoque de desarrollo se centra en la estabilidad, seguridad y el rendimiento.
+    
+    Tiene una estabilidad asegurada, dado que al adquirir RHEL se consigue un soporte empresarial las 24 horas de los 7 días de la semana. Su ciclo de vida de 10 años permite utilizar este sistema por un largo tiempo sin necesidad de grandes actualizaciones o errores.
+    
+    La seguridad de RHEL está garantizada, dado que este sistema proporciona medidas de seguridad de alta calidad. SELinux (Security-Enhanced Linux) es una de ellas, ya que ofrece control sobre permisos del sistema y protege contra ataques maliciosos. También, Red Hat tiene equipos de seguridad monitoreando y respondiendo amenazas lo más rápido posible.
+    
+2. **Fedora**
+    
+    ¿Por qué Fedora Server 38?
+    
+    Fácil, sus versiones a largo plazo permiten una fiabilidad mayor, esto da una superioridad objetiva sobre sus competidores directos. Aunque existen otras distribuciones Linux con versiones LTS con mayor tiempo de mantenimiento, existen varias cosas que ayudan a decidir.
+    
+    a - Fedora Server es una versión muy enfocada al servidor.
+    b - Red Hat Enterprise Linux, distribución de la cual nace Fedora, es una distribución Linux de paga muy cara, lo que no permite a todas las empresas conseguir factibilidad tanto a largo como a corto plazo.
+    c - Actualizaciones más constantes que el resto de distribuciones, el mundo Linux da muchos cambios repentinos con creaciones de la comunidad, lo que permite a muchas distribuciones tener lo último en tecnología, Fedora Server es una de las mejores en esto.
+    d - El cierre de CentOs. CentOs 8 será la última versión de CentOs como se conoce, la empresa creadora Red Hat ha decidido cambiarla por CentOs Stream, lo que trae consecuencias graves, algunas son por ejemplo, desconocimiento del sistema por parte de los usuarios, falta grave de guías y ayudas dentro de la gran comunidad de CentOs, desconocimiento de las actualizaciones del sistema y el desconocimiento de los programas establecidos.
+    e - Mercado. La proporción del mercado de distribuciones dentro de Linux ha cambiado drásticamente en los últimos años, Fedora ha sido una de las más aceptadas entre los usuarios de Linux últimamente.
+    
+    Para respaldo y mantenimiento de los sistemas hechos con Fedora, se puede recomendar llamar a cualquier empresa o trabajador que utilice Linux, dado que Fedora es un sistema fácil y muy utilizado.
+    
+
+# Manuales de instalación del sistema operativo en el servidor
+
+## RHEL
+
+- Nuestro archivo para RHEL: RHEL Sistema Manual de instalación.
+- Manual original: https://access.redhat.com/documentation/es-es/red_hat_enterprise_linux/7/html-single/installation_guide/index
+
+## Fedora
+
+- Nuestro archivo para Fedora: Fedora Sistema Manual de instalación.
+- Manual original: https://docs.fedoraproject.org/es/fedora/f28/install-guide/
+
+# Instalación de Docker dentro de la máquina virtual con el sistema operativo a utilizar
+
+- Nuestro archivo para RHEL: Docker y LAMP en RHEL Manual de Instalación.
+- Nuestro archivo para Fedora: Docker y LAMP en Fedora Manual de Instalación.
+
+# Manual de Instalación de MySQL/MariaDB junto a sus requisitos para trabajar con Docker
+
+- Archivo para RHEL: Base de Datos RHEL Manual de Instalación.
+- Archivo para Fedora: Base de Datos Fedora Manual de Instalación.
+
+# Primera versión del script de gestión de usuarios y grupos del sistema operativo
+
+- Carpeta Scripts.
+- Ejecutar el script Inicio.sh con root obligatorio.

@@ -1,0 +1,43 @@
+﻿# Manual de instalación de la base de datos
+
+## Paso 1: Descarga de la imagen de MySQL/MariaDB
+
+1. Una vez que Docker esté instalado, puedes descargar la imagen de MySQL/MariaDB desde el registro de Docker.
+2. Ejecuta el siguiente comando en la terminal:
+
+```
+docker pull mysql
+
+```
+
+1. Esto descargará la última imagen de MySQL disponible en Docker Hub.
+
+## Paso 3: Creación y configuración del contenedor de MySQL/MariaDB
+
+1. Una vez que la imagen de MySQL/MariaDB esté descargada, puedes crear un contenedor y configurarlo según tus necesidades.
+2. Aquí tienes un ejemplo básico de creación de un contenedor de MySQL:
+
+```
+docker run -d --name mysql-container -e MYSQL_ROOT_PASSWORD=contraseña -p 3306:3306 mysql
+
+```
+
+1. Este comando crea un contenedor con el nombre "mysql-container", establece la contraseña de root de MySQL y mapea el puerto 3306 del contenedor al puerto 3306 del host.
+
+## Paso 4: Acceso a MySQL/MariaDB
+
+1. Una vez que el contenedor esté en ejecución, puedes acceder a MySQL/MariaDB desde tu host a través del cliente de MySQL.
+2. Puedes usar herramientas como MySQL Workbench, phpMyAdmin u otros clientes de tu elección para conectarte al servidor MySQL/MariaDB.
+3. Utiliza la dirección IP del host y el puerto mapeado (por ejemplo, localhost:3306) junto con las credenciales configuradas en el paso anterior.
+
+### Nota
+
+Existen diferentes opciones de configuración y personalización disponibles, como la persistencia de datos, la configuración de usuarios adicionales y la configuración avanzada del servidor.
+
+Te recomiendo consultar la documentación oficial de Docker y MySQL/MariaDB para obtener información detallada y actualizada sobre la instalación y configuración específica que necesites.
+
+## Fuentes
+
+- Documentación de Docker: https://docs.docker.com/
+- Documentación de MySQL: https://dev.mysql.com/doc/
+- Documentación de MariaDB: https://mariadb.com/kb/en/documentation/

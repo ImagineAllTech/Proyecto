@@ -1,0 +1,28 @@
+h2{
+    margin: 1em 0;
+}
+
+.table td, .table th{
+    border-top: 1px solid #000000;
+    border-color: black;
+}
+
+.table thead th{
+    border-bottom: none;
+    border-color: black;
+    font-size: 14px;
+    text-align: center;
+}
+
+.btn-primary{
+    color: #000;
+    font-weight: 600;
+    background-color: #6dab29;
+    border-color: #000000
+}
+.btn-danger{
+    font-weight: 500;
+    color: #000;
+    background-color: #f9727f;
+    border-color: #dc3545
+}
