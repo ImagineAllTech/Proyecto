@@ -1,1 +1,0 @@
-Una de las solicitudes para el sistema de scripts en bash es que se inicie con el sistema. Debido a que es un script en bash, el sistema no lo permite, o quizás Fedora en particular no lo permite. Sabemos que hay diferentes formas de hacerlo, pero no son las elegidas para este proyecto.
