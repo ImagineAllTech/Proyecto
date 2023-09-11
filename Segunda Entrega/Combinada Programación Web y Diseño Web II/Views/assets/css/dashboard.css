@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,500&display=swap');
+
+html{
+  scroll-behavior: smooth;
+}
+
+.card{
+    background-image: url(../assets/img/fondo.png);
+    background-position: center;
+    background-size: cover;
+}
+
+.font-montserrat{
+    font-family: 'Montserrat', 'sans-serif';
+}
+
+.font-bricolage{
+    font-family: 'Bricolage Grotesque', 'sans-serif';
+}
+
+main{
+    width: calc(100% - 5em);
+}
+
+.font-poppins{
+    font-family: 'Poppins', 'sans-serif';
+}
+
+.sidebar-activo {
+    margin-top: 5rem;
+    width: calc(100% - 15em);
+    transition: width 0.3s ease;
+}
+
+.sidebar-inactivo {
+    margin-top: 5rem;
+    width: calc(100% - 5em);
+    transition: width 0.3s ease;
+}
+
+table{
+    width: 100%;
+}
+
+td{
+    font-weight: 400;
+    border: 1px solid rgb(219, 225, 231);
+}
+
+thead{
+    background: rgb(203 213 225);
+}
+
+th{
+    border: 1px solid rgb(150, 163, 178);
+}
+
+tbody{
+    background: #ffffff;
+}

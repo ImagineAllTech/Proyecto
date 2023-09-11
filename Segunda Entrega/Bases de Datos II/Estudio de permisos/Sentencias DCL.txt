@@ -1,0 +1,18 @@
+CREATE USER 'administrador'@'localhost' IDENTIFIED BY 'password';
+CREATE USER 'juez'@'localhost' IDENTIFIED BY 'password';
+CREATE USER 'usuario'@'localhost';
+
+GRANT SELECT, INSERT, UPDATE, DELETE ON * TO administrador;
+GRANT SELECT ON competidor TO juez, usuario;
+GRANT SELECT ON competencia TO juez, usuario;
+GRANT SELECT ON kata TO juez, usuario;
+GRANT SELECT ON grupo TO juez, usuario;
+GRANT SELECT ON escuela TO juez, usuario;
+GRANT SELECT ON juez TO juez;
+GRANT SELECT ON juzga TO usuario;
+GRANT SELECT, INSERT, UPDATE ON juzga TO juez;
+GRANT SELECT ON asiste TO juez;
+GRANT SELECT ON forma TO usuario, juez;
+GRANT SELECT ON elige TO usuario, juez;
+GRANT SELECT ON integra TO usuario, juez;
+
