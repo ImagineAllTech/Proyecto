@@ -1,7 +1,0 @@
-CREATE USER 'administrador'@'localhost' IDENTIFIED BY 'password';
-CREATE USER 'juez'@'localhost' IDENTIFIED BY 'password';
-CREATE USER 'usuario'@'localhost';
-
-GRANT SELECT, INSERT, UPDATE, DELETE ON * TO administrador;
-
-
