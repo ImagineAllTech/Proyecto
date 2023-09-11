@@ -12,4 +12,8 @@ El control de versiones es la práctica de rastrear y gestionar los cambios en e
 
 Las competencias KATA son eventos en los que los participantes demuestran su habilidad y conocimiento en la ejecución de formas o modelos que representan la perfección en la aplicación de los principios de un arte marcial. Estas competencias se llevan a cabo a nivel mundial y utilizan lineamientos y procedimientos de evaluación estandarizados.
 
+<<<<<<< HEAD
 En el contexto de este proyecto, KATA hace referencia a la aplicación de estos principios y técnicas en el desarrollo de software, buscando la excelencia en la ejecución y el rendimiento del equipo de desarrollo.
+=======
+En el contexto de este proyecto, KATA hace referencia a la aplicación de estos principios y técnicas en el desarrollo de software, buscando la excelencia en la ejecución y el rendimiento del equipo de desarrollo.
+>>>>>>> lyceum
