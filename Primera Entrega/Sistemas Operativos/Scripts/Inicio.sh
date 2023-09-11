@@ -14,13 +14,12 @@ read -p "Ingrese opcion : " op
 
 case $op in
 	1)
-	 sh ABM_usuario.sh
+	 sudo sh ABM_usuario.sh
 	;;
 	2)
-	 sh ABM_grupo.sh
+	 sudo sh ABM_grupo.sh
 	;;
 	99)	 
-	clear         
-	break
+	exec         
 	;;
 esac
