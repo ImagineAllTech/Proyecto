@@ -1,0 +1,124 @@
+/*      VARIABLES DE COLORES         */
+
+:root {
+    /* Colores */
+    --primary-color: #cf7500;
+    --primary-dark-color: #eca241;
+    --primary-light-color: #874c00;
+
+    --background-color: #171717;
+
+    /* Header */
+
+    --header-bg: #1f1f1f;
+
+    /* Introduccion */
+
+    --intro-bg: #1f1f1f;
+    --tech-bg: rgb(26, 24, 23);
+
+    /* Members */
+
+    --members-bg: rgb(18 15 15);
+    --card-bg: rgba(238, 238, 238, 0.11);
+    --card-title: #eae8e8;
+    --card-role: #d0d0d0;
+
+    --contact-bg: #161512;
+
+    /* Generales */
+
+    --text-black-color: #ededed;
+    --text-span-color: #cf7500;
+
+}
+
+.dark-mode {
+
+    /* Colores */
+    --primary-color: #cf7500;
+    --primary-light-color: #eca241;
+    --primary-dark-color: #874c00;
+
+    --background-color: #efefef;
+
+    /* Header */
+
+    --header-bg: #f1f1f1;
+
+    /* Introduccion */
+
+    --intro-bg: #ebebeb;
+    --tech-bg: rgb(248, 233, 219);
+
+    /* Members */
+
+    --members-bg: rgb(255, 249, 237);
+    --card-bg: rgba(0, 0, 0, 0.11);
+    --card-title: #131313;
+    --card-role: #303030;
+
+    --contact-bg: rgba(239, 231, 207, 1);
+
+    /* Generales */
+
+    --text-black-color: #131313;
+    --text-span-color: #cf7500;
+
+}
+
+.cyan-mode {
+
+    /* Colores */
+    --primary-color: #009fcf;
+    --primary-light-color: #62c6e4;
+    --primary-dark-color: #057091;
+
+    --background-color: #efefef;
+
+    /* Header */
+
+    --header-bg: #f1f1f1;
+
+    /* Introduccion */
+
+    --intro-bg: #ebebeb;
+    --tech-bg: rgb(248, 233, 219);
+
+    /* Members */
+
+    --members-bg: rgb(255, 249, 237);
+    --card-bg: rgba(0, 0, 0, 0.11);
+    --card-title: #131313;
+    --card-role: #303030;
+
+    --contact-bg: rgba(239, 231, 207, 1);
+
+    /* Generales */
+
+    --text-black-color: #131313;
+    --text-span-color: #cf7500;
+
+}
+
+
+/* ATRIBUTOS GENERALES */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Poppins;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
