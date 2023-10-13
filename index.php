@@ -29,11 +29,8 @@
 
             <div class="flex flex-col items-center justify-center gap-6 w-full">
 
-                <div></div>
+                <!-- <div></div> -->
 
-                <!-- <h1 class="font-poppins text-4xl font-bold">
-                    Opciones:
-                </h1> -->
                 <nav class="flex flex-col lg:flex-row items-center justify-between w-8/12 gap-4">
                         <a href="Views/views/login/login.php"
                         class="w-full md:8/12 lg:w-6/12 h-12 bg-blue-700 text-white flex items-center justify-center hover:bg-blue-800 font-semibold rounded-full text-xl">Iniciar
