@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="Views/assets/img/Logotype.svg" type="image/x-icon">
-    <link rel="stylesheet" href="Views/assets/css/dashboard.css">
+    <link rel="stylesheet" href="Views/assets/css/normalize.css">
     <link rel="stylesheet" href="Views/assets/css/jueces.css">
     <title>CUK | Inicio</title>
 
@@ -24,7 +24,7 @@
 
             <div class="flex flex-col items-center justify-center w-10/12 gap-3">
                 <h1 class="text-5xl sm:text-7xl md:text-8xl text-center text-black font-semibold font-bricolage">Confederacion <span class="text-blue-700">Uruguaya</span> de <span class="text-blue-700">Karate</span></h1>
-                <p class="font-poppins text-xl md:text-2xl font-semibold text-blue-700">CUK Kata | Imagine All Tech</p>
+                <!-- <p class="font-poppins text-xl md:text-2xl font-semibold text-blue-700">CUK Kata | Imagine All Tech</p> -->
             </div>
 
             <div class="flex flex-col items-center justify-center gap-6 w-full">
