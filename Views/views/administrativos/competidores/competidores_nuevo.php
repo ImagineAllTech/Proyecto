@@ -1,11 +1,9 @@
 <?php
-
 session_start();
 
 if(empty($_SESSION["id"])){
     header("location: ../../../../Views/views/login/login.php");
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -87,16 +85,13 @@ if(empty($_SESSION["id"])){
                        <label for="Fnac" class="bg-white text-blue-700 font-bold font-bricolage absolute top-0 left-3 cursor-pointer px-1">Fecha de Nacimiento</label>     
                      </div>
 
-                     <div class="form__group relative">
-                     <input list="form__genero__datalist" name="Sexo" class="w-full bg-transparent border-b outline-none py-2 px-4 text-gray-900 font-bricolage text-xl border-blue-800 origin-top-left translate-y-3" id="form__genero" required>
-                    <label for="form__genero__datalist" class="bg-white text-blue-700 font-bold font-bricolage absolute top-0 left-3 cursor-pointer px-1">Sexo</label>
-
-                    <datalist id="form__genero__datalist">
-                        <option value="Masculino"></option>
-                        <option value="Femenino"></option>
-                        <option value="Otro"></option>
-                    </datalist>
-
+                    <div class="form__group relative">
+                         <select name="Sexo" class="w-full bg-transparent border-b outline-none py-2 px-4 text-gray-900 font-bricolage text-xl border-blue-800 origin-top-left translate-y-3" required>
+                             <option value="Masculino">Masculino</option>
+                             <option value="Femenino">Femenino</option>
+                             <option value="Otro">Otro 3</option>
+                        </select>
+                        <label for="Sexo" class="bg-white text-blue-700 font-bold font-bricolage absolute top-0 left-3 cursor-pointer px-1">Sexo</label>
                     </div>
 
                     <!-- Escuela-Dojo -->
@@ -109,7 +104,6 @@ if(empty($_SESSION["id"])){
                             pattern="[A-z]{2,50}"
                             minlength="2" maxlength="50" required>
                             <label for="Escuela" class="bg-white text-blue-700 font-bold font-bricolage absolute top-0 left-3 cursor-pointer px-1">Escuela</label>
-                            
                         </div>
                         
                         
