@@ -42,7 +42,7 @@ tbody{
 @media (min-width: 768px){
     .sidebar-activo {
         margin-top: 5rem;
-        width: calc(100% - 15em);
+        width: calc(100% - 16.4em);
         transition: width 0.3s ease;
     }
     
