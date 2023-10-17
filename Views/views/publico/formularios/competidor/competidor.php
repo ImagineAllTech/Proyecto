@@ -27,7 +27,10 @@
             <h1 class="font-bricolage text-5xl font-bold text-blue-800 mb-10">Registrar <span
                     class="text-slate-900">Competidor</span></h1>
 
-            <form action="" method="" class=""> 
+            <form
+            method="POST" 
+            action="../../../../../Models/enrutador.php?c=peticionComp&a=guarda"
+            > 
 
                 <h2 class="font-bricolage text-2xl font-semibold text-gray-800 ml-4 mb-5">Informacion del Encargado</h2>
 
@@ -36,20 +39,24 @@
 
                     <div class="w-full md:flex flex-col md:flex-row items-center justify-between md:gap-8">
                         <div class="form__group relative mb-8 md:mb-0">
-                            <input type="text"
-                                class="w-full bg-transparent border-b outline-none py-2 px-4 text-gray-900 font-bricolage text-xl border-blue-800 origin-top-left translate-y-3"
-                                placeholder="Escriba su nombre aqui" name="CI" pattern="\d{8}" minlength="8"
-                                maxlenght="8" required>
-                            <label for="CI"
+                        <input type="text"
+                            class="w-full bg-transparent border-b outline-none py-2 px-4 text-gray-900 font-bricolage text-xl border-blue-800 origin-top-left translate-y-3"
+                            placeholder="Escribe el nombre aqui" name="nameEnc"
+                            pattern="[A-z]{2,20}"
+                            minlength="2" maxlength="20" required
+                            >
+                            <label for="nameEnc"
                                 class=" text-blue-700 font-bold font-bricolage absolute top-0 left-3 cursor-pointer px-1">Nombre</label>
                         </div>
 
                         <div class="form__group relative mt-8 md:mt-0">
-                            <input type="text"
-                                class="w-full bg-transparent border-b outline-none py-2 px-4 text-gray-900 font-bricolage text-xl border-blue-800 origin-top-left translate-y-3"
-                                placeholder="Escribe la cedula aqui" name="CI" pattern="\d{8}" minlength="8"
-                                maxlenght="8" required>
-                            <label for="CI"
+                        <input type="text"
+                            class="w-full bg-transparent border-b outline-none py-2 px-4 text-gray-900 font-bricolage text-xl border-blue-800 origin-top-left translate-y-3"
+                            placeholder="Escribe su apellido aqui" name="apellEnc"
+                            pattern="[A-z]{2,20}"
+                            minlength="2" maxlength="20" required
+                            >
+                            <label for="apellEnc"
                                 class=" text-blue-700 font-bold font-bricolage absolute top-0 left-3 cursor-pointer px-1">Apellido</label>
                         </div>
                     </div>
@@ -58,18 +65,20 @@
                         <div class="form__group relative mb-8 md:mb-0">
                             <input type="text"
                                 class="w-full bg-transparent border-b outline-none py-2 px-4 text-gray-900 font-bricolage text-xl border-blue-800 origin-top-left translate-y-3"
-                                placeholder="Escriba su cedula aqui" name="CI" pattern="\d{8}" minlength="8"
+                                placeholder="Escriba su cedula aqui" name="CIEnc" pattern="\d{8}" minlength="8"
                                 maxlenght="8" required>
-                            <label for="CI"
+                            <label for="CIEnc"
                                 class=" text-blue-700 font-bold font-bricolage absolute top-0 left-3 cursor-pointer px-1">Cedula</label>
                         </div>
 
                         <div class="form__group relative mt-8 md:mt-0">
-                            <input type="text"
-                                class="w-full bg-transparent border-b outline-none py-2 px-4 text-gray-900 font-bricolage text-xl border-blue-800 origin-top-left translate-y-3"
-                                placeholder="Escriba la federacion aqui" name="CI" pattern="\d{8}" minlength="8"
-                                maxlenght="8" required>
-                            <label for="CI"
+                        <input type="text"
+                            class="w-full bg-transparent border-b outline-none py-2 px-4 text-gray-900 font-bricolage text-xl border-blue-800 origin-top-left translate-y-3"
+                            placeholder="Escribe el federacion aqui" name="Fed"
+                            pattern="[A-z]{2,50}"
+                            minlength="2" maxlength="50" required
+                            >
+                            <label for="Fed"
                                 class=" text-blue-700 font-bold font-bricolage absolute top-0 left-3 cursor-pointer px-1">Federacion</label>
                         </div>
                     </div>
@@ -92,11 +101,11 @@
                         <div class="form__group relative w-full mb-8 md:mb-0">
                             <input type="text"
                             class="w-full bg-transparent border-b outline-none py-2 px-4 text-gray-900 font-bricolage text-xl border-blue-800 origin-top-left translate-y-3"
-                            placeholder="Escribe el nombre aqui" name="Nombre"
+                            placeholder="Escribe el nombre aqui" name="name"
                             pattern="[A-z]{2,20}"
                             minlength="2" maxlenght="20" required
                             >
-                            <label for="Nombre" class=" text-blue-700 font-bold font-bricolage absolute top-0 left-3 cursor-pointer px-1">Nombre</label>
+                            <label for="name" class=" text-blue-700 font-bold font-bricolage absolute top-0 left-3 cursor-pointer px-1">Nombre</label>
                             
                         </div>
                         
@@ -104,32 +113,31 @@
                         <div class="form__group relative w-full mt-8 md:mt-0">
                            <input type="text"
                               class="w-full bg-transparent border-b outline-none py-2 px-4 text-gray-900 font-bricolage text-xl border-blue-800 origin-top-left translate-y-3"
-                              placeholder="Escribe el apellido aqui" name="Apellido"
+                              placeholder="Escribe el apellido aqui" name="apell"
                               pattern="[A-z]{2,20}"
                               min="2" max="20" required
                               >
-                          <label for="Apellido" class=" text-blue-700 font-bold font-bricolage absolute top-0 left-3 cursor-pointer px-1">Apellido</label>     
+                          <label for="apell" class=" text-blue-700 font-bold font-bricolage absolute top-0 left-3 cursor-pointer px-1">Apellido</label>     
                         </div>
                     </div>
 
                     <div class="w-full md:flex flex-col md:flex-row items-center justify-between md:gap-8 mb-8">
 
-                        <div class="form__group relative w-full mb-8 md:mb-0">
-                            <input list="form__genero__datalist" name="Sexo" class="w-full bg-transparent border-b outline-none py-2 px-4 text-gray-900 font-bricolage text-xl border-blue-800 origin-top-left translate-y-3" id="form__genero" placeholder="Selecciona el genero" required>
-                            <label for="form__genero__datalist" class=" text-blue-700 font-bold font-bricolage absolute top-0 left-3 cursor-pointer px-1">Sexo</label>
-    
-                            <datalist id="form__genero__datalist">
-                                <option value="Masculino"></option>
-                                <option value="Femenino"></option>
-                                <option value="Otro"></option>
-                            </datalist>
-                        </div>
+                    <div class="form__group relative">
+                         <select name="sexo" class="w-full bg-transparent border-b outline-none py-2 px-4 text-gray-900 font-bricolage text-xl border-blue-800 origin-top-left translate-y-3" required>
+                             <option value="Masculino">Masculino</option>
+                             <option value="Femenino">Femenino</option>
+                             <option value="Otro">Otro 3</option>
+                        </select>
+                        <label for="sexo" class="bg-white text-blue-700 font-bold font-bricolage absolute top-0 left-3 cursor-pointer px-1">Sexo</label>
+                    </div>
 
                         <div class="form__group relative w-full mt-8 md:mt-0">
-                            <input type="date"
-                            class="w-full bg-transparent border-b outline-none py-2 px-4 text-gray-900 font-bricolage text-xl border-blue-800 origin-top-left translate-y-3"
-                            placeholder="Escribe la cedula aqui" name="Fnac" required>
-                            <label for="Fnac" class=" text-blue-700 font-bold font-bricolage absolute top-0 left-3 cursor-pointer px-1">Fecha de Nacimiento</label>     
+                        <input type="date"
+                        class="w-full bg-transparent border-b outline-none py-2 px-4 text-gray-900 font-bricolage text-xl border-blue-800 origin-top-left translate-y-3"
+                        name="fnac" required
+                        min="1960-01-01" max="2023-12-31">
+                        <label for="fnac" class=" text-blue-700 font-bold font-bricolage absolute top-0 left-3 cursor-pointer px-1">Fecha de Nacimiento</label>     
                         </div>
                     </div>
                     

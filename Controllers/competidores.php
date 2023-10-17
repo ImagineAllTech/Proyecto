@@ -3,7 +3,7 @@
 	class CompetidoresController {
 		
 		public function __construct(){
-			require_once "../../../../Models/competidoresModel.php";
+			require_once "competidoresModel.php";
 		}
 		
 		public function index(){
@@ -12,13 +12,13 @@
 			$data["titulo"] = "Competidores";
 			$data["Competidores"] = $Competidor->get_competidores();
 			
-			require_once "../../../../Views/views/administrativos/competidores/competidores.php";
+			require_once "../Views/views/administrativos/competidores/competidores.php";
 		}
 		
 		public function nuevo(){
 			
 			$data["titulo"] = "Competidores";
-			require_once "../../../../Views/views/administrativos/competidores/competidores_nuevo.php";
+			require_once "../Views/views/administrativos/competidores/competidores_nuevo.php";
 		}
 		
 		public function guarda(){

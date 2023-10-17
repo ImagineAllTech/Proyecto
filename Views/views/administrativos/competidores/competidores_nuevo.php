@@ -39,7 +39,7 @@ if(empty($_SESSION["id"])){
 
             <form name="nuevo" 
             method="POST" 
-            action="../competidores/enrutador.php?c=competidores&a=guarda"
+            action="../../../../Models/enrutador.php?c=competidores&a=guarda"
             autocomplete="off"
             class="flex flex-col items-center justify-center w-full gap-8 w-full">
 

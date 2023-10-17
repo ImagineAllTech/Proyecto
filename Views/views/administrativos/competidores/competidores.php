@@ -38,7 +38,7 @@ if(empty($_SESSION["id"])){
         </div>
 
         <div class="w-full flex items-start justify-start flex-col">
-            <a href="../competidores/enrutador.php?c=competidores&a=nuevo"
+            <a href="../../../../Models/enrutador.php?c=competidores&a=nuevo"
                 class="px-6 py-2 rounded bg-blue-700 text-white text-xl hover:bg-blue-800 mb-8">Agregar Competidor</a>
 
             <table class="table-auto border border-slate-300" cellpadding="6" cellspacing="0">
@@ -66,9 +66,9 @@ if(empty($_SESSION["id"])){
                         echo "<td class='text-center'>".$dato["Sexo"]."</td>";
                         echo "<td>".$dato["Escuela"]."</td>";
                         echo "<td>".$dato["Dojo"]."</td>";
-                        echo "<td class='text-blue-700 font-bricolage font-bold text-center'><a href='../competidores/enrutador.php?c=competidores&a=modificar&ID=".$dato["ID"]."'>Modificar</a></td>";
+                        echo "<td class='text-blue-700 font-bricolage font-bold text-center'><a href='../../../../Models/enrutador.php?c=competidores&a=modificar&ID=".$dato["ID"]."'>Modificar</a></td>";
 
-                        echo "<td class='text-blue-700 font-bricolage font-bold text-center'><a href='../competidores/enrutador.php?c=competidores&a=eliminar&ID=".$dato["ID"]."'>Eliminar</a></td>";
+                        echo "<td class='text-blue-700 font-bricolage font-bold text-center'><a href='../../../../Models/enrutador.php?c=competidores&a=eliminar&ID=".$dato["ID"]."'>Eliminar</a></td>";
                     echo "</tr>";
 
                     }
