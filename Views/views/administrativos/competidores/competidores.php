@@ -16,9 +16,9 @@ if(empty($_SESSION["id"])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CUKDash | Competidores</title>
-    <link rel="shortcut icon" href="../../../assets/img/Logotype.svg" type="image/x-icon">
-    <link rel="stylesheet" href="../../../assets/css/dashboard.css">
-    <link rel="stylesheet" href="../../../assets/css/normalize.css">
+    <link rel="shortcut icon" href="../Views/assets/img/Logotype.svg" type="image/x-icon">
+    <link rel="stylesheet" href="../Views/assets/css/dashboard.css">
+    <link rel="stylesheet" href="../Views/assets/css/normalize.css">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://kit.fontawesome.com/cea33d77ef.js" crossorigin="anonymous"></script>
@@ -81,8 +81,8 @@ if(empty($_SESSION["id"])){
         </div>
     </main>
 
-    <script defer src="../../../assets/js/dashboard.js"></script>
-    <script src="../../../components/menu.js"></script>
+    <script defer src="../Views/assets/js/dashboard.js"></script>
+    <script src="../Views/components/menu.js"></script>
 </body>
 
 </html>
