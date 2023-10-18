@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peticion Competidor</title>
+
+    <script src='https://cdn.tailwindcss.com'></script>
+    <link rel="stylesheet" href="../Views/assets/css/normalize.css">
+    <script src='https://kit.fontawesome.com/cea33d77ef.js' crossorigin='anonymous'></script>
+    <style media='all' id='fa-v4-font-face'></style>
+</head>
+
+<body class="flex h-screen w-full items-center justify-center">
+    <section class='fixed form flex flex-col items-center justify-center h-screen w-full' style='background-color: rgba(0, 0, 0, 0.411);'>
+
+        <div class='flex flex-col items-center justify-start p-2 w-4/12 bg-white h-5/6 rounded'>
+
+            <figure class='w-full h-3/6 bg-blue-300 flex items-center justify-center rounded-sm text-6xl text-blue-600'>
+                <i class='fa-solid fa-check'></i>
+            </figure>
+
+            <!-- <div class='texts mb-4 w-full mt-2'>
+                <h2 class='font-poppins text-4xl text-green-800 text-center'>¿Estas seguro?</h2>
+            </div> -->
+
+            <form method='POST' action='../../../../Models/enrutador.php?c=peticionComp&a=añadirComp&ID=.$dato[IDComp].'
+                class='flex flex-col mt-4 items-center w-full h-full gap-12'>
+
+                <input type='text' hidden name='IDComp' value=.$dato[IDComp].>
+
+                <div class='form__group relative w-full'>
+                    <input type='text'
+                    value=".$dato["CI"]."
+                    class='w-full bg-transparent border-b outline-none py-2 px-4 text-gray-900 font-bricolage text-xl border-blue-800 origin-top-left translate-y-3'
+                    placeholder='Escribe la cedula aqui' name='CI'
+                    pattern='\d{8}' minlength='8' maxlength='8' required>
+                    <label for='CI' class='bg-white text-blue-700 font-bold font-bricolage absolute top-0 left-3 cursor-pointer px-1'>Cedula</label>     
+                </div> 
+
+                <div class='flex items-center justify-center gap-4'>
+                    <div class='form__group relative w-full'>
+                        <input type='text'
+                        value=".$dato["name"]."
+                        class='w-full bg-transparent border-b outline-none py-2 px-4 text-gray-900 font-bricolage text-xl border-blue-800 origin-top-left translate-y-3'
+                        placeholder='Nombre' name='name'
+                        pattern='[A-z]{2,20}'
+                        minlength='2' maxlength='20' required
+                        >
+                        <label for='name' class='bg-white text-blue-700 font-bold font-bricolage absolute top-0 left-3 cursor-pointer px-1'>Nombre</label>
+                        
+                    </div>
+
+                    <div class='form__group relative w-full'>
+                        <input type='text'
+                        value=".$dato["apell"]."
+                        class='w-full bg-transparent border-b outline-none py-2 px-4 text-gray-900 font-bricolage text-xl border-blue-800 origin-top-left translate-y-3'
+                        placeholder='Apellido' name='apell'
+                        pattern='[A-z]{2,20}'
+                        minlength='2' maxlength='20' required
+                        >
+                        <label for='apell' class='bg-white text-blue-700 font-bold font-bricolage absolute top-0 left-3 cursor-pointer px-1'>Apellido</label>
+                        
+                    </div>
+                </div>
+
+                <div class='form__group relative w-full'>
+                    <input type='text'
+                    value=".$dato["Fed"]."
+                    class='w-full bg-transparent border-b outline-none py-2 px-4 text-gray-900 font-bricolage text-xl border-blue-800 origin-top-left translate-y-3'
+                    placeholder='Federacion' name='Fed'
+                    pattern='[A-z]{2,50}'
+                    minlength='2' maxlength='50' required
+                    >
+                    <label for='Fed' class='bg-white text-blue-700 font-bold font-bricolage absolute top-0 left-3 cursor-pointer px-1'>Federacion</label>
+                </div>
+
+                <div class='flex items-center justify-start gap-4 w-full'>
+                    <div class='form__group relative'>
+                        <input type='date'
+                        value=".$dato["fnac"]."
+                           class='w-full bg-transparent border-b outline-none py-2 px-4 text-gray-900 font-bricolage text-xl border-blue-800 origin-top-left translate-y-3w-full bg-transparent border-b outline-none py-2 px-4 text-gray-900 font-bricolage text-xl border-blue-800 origin-top-left translate-y-3'
+                           placeholder='Escribe la cedula aquí' name='Fnac' required
+                           min='1960-01-01' max='2023-12-31'>
+                          <label for='Fnac' class='bg-white text-blue-700 font-bold font-bricolage absolute top-0 left-3 cursor-pointers'>Fecha de Nacimiento</label>     
+                    </div>
+
+                    <div class='form__group relative w-full'>
+                        <select name='Sexo' value=".$dato["sexo"]." class='w-full bg-transparent border-b outline-none py-2 px-4 text-gray-900 font-bricolage text-xl border-blue-800 origin-top-left translate-y-3' required>
+                            <option value='Masculino'>Masculino</option>
+                            <option value='Femenino'>Femenino</option>
+                            <option value='Otro'>Otro</option>
+                       </select>
+                       <label for='Sexo' class='bg-white text-blue-700 font-bold font-bricolage absolute top-0 left-3 cursor-pointer'>Sexo</label>
+                   </div>
+                </div>
+
+                <div class='buttons w-full flex items-center justify-center text-center'>
+                        <input
+                        type='submit' 
+                        name='guardar'
+                        id='guardar'
+                        value='Guardar Competidor'
+                        class='cursor-pointer w-full h-10 font-normal font-bricolage text-2xl rounded bg-blue-700 hover:bg-blue-800 text-white flex items-center justify-center text-center'
+                        >
+                    </div>
+            </form>
+        </div>
+    </section>
+</body>
+
+</html>
