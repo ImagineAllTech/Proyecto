@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html id="html" class="" lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="Views/assets/img/Logotype.svg" type="image/x-icon">
+    <!-- <link rel="stylesheet" href="Views/assets/css/normalize.css">
+    <link rel="stylesheet" href="Views/assets/css/jueces.css"> -->
+    <title>CUK | Inicio</title>
+
+    <link rel="stylesheet" href="../../Views/assets/css/normalize.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/cea33d77ef.js" crossorigin="anonymous"></script>
+</head>
+<body class="relative flex flex-col w-full min-h-screen items-center justify-start">
+    <main class="w-full flex flex-col items-center">
+        <section class="w-10/12 flex flex-col items-start justify-start mt-12">
+            <div class="texts mb-8">
+                <h2 class="font-inter font-black text-6xl text-blue-950">Torneos <span class="text-blue-600">CUK</span></h2>
+                <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus voluptate quas blanditiis aliquam iure soluta accusantium, quia dolores in beatae!</p> -->
+            </div>
+            <div class="buttons mb-8">
+                <a href="#" class="px-7 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-800 font-poppins text-xl">Añadir Torneo</a>
+            </div>
+            <table class="w-full font-poppins text-blue-950" border="1" cellpadding="7" cellspacing="0">
+                <thead class="border border-gray-800 text-md">
+                    <tr class="bg-gray-200">
+                        <th class="border border-gray-800">Nombre del Torneo</th>
+                        <th class="border border-gray-800">Cantidad Jueces</th>
+                        <th class="border border-gray-800">Genero</th>
+                        <th class="border border-gray-800">Fecha</th>
+                        <th class="border border-gray-800">Estado</th>
+                        <th class="border border-gray-800">Editar</th>
+                        <th class="border border-gray-800">Borrar</th>
+                    </tr>
+                </thead>
+                <tbody class="text-lg">
+                    <tr>
+                        <td class="border border-gray-800">Torneo Ejemplo</td>
+                        <td class="border border-gray-800 text-center">5 jueces</td>
+                        <td class="border border-gray-800 text-center">Masculino</td>
+                        <td class="border border-gray-800 text-center">7-12-2023</td>
+                        <td class="border border-gray-800 text-center">En curso</td>
+                        <td class="border border-gray-800 text-center text-2xl"><a id="menu"  href="#" class="p-2 text-green-700"><i class="fa-solid fa-circle-check"></i></a></td>
+                        <td class="border border-gray-800 text-center text-2xl"><a href="#" class="p-2 text-red-700"><i class="fa-solid fa-circle-xmark"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td class="border border-gray-800">Lorem ipsum</td>
+                        <td class="border border-gray-800 text-center">7 jueces</td>
+                        <td class="border border-gray-800 text-center">Femenino</td>
+                        <td class="border border-gray-800 text-center">31-12-2023</td>
+                        <td class="border border-gray-800 text-center">Pendiente</td>
+                        <td class="border border-gray-800 text-center text-2xl"><a id="menu" href="#" class="p-2 text-green-700"><i class="fa-solid fa-circle-check"></i></a></td>
+                        <td class="border border-gray-800 text-center text-2xl"><a href="#" class="p-2 text-red-700"><i class="fa-solid fa-circle-xmark"></i></a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <section id="popup" class='popup hidden fixed flex flex-col items-center justify-center w-full h-full' style='background-color: rgba(0, 0, 0, 0.411);'>
+
+        <div class='flex flex-col items-center justify-start p-6 w-4/12 bg-white h-5/6 rounded'>
+
+            <!-- <figure class='w-full h-3/6 bg-blue-300 flex items-center justify-center rounded-sm text-6xl text-blue-600'>
+                <i class='fa-solid fa-check'></i>
+            </figure> -->
+
+            <div class='texts mb-4 w-full'>
+                <h2 class='font-inter font-black text-4xl text-blue-950'>Informacion Torneo</h2>
+            </div>
+
+            <div class="w-full h-full flex flex-col items-center justify-between">
+                <article class="w-full flex flex-col items-center justify-start">
+                    <div class="mb-4 w-full flex items-start justify-start gap-3">
+                        <h2 class="font-poppins font-semibold text-blue-900 text-2xl">Categorias:</h2>
+                        <nav class="flex flex-col font-poppins text-xl">
+                            <a class="text-blue-600 hover:underline" href="#">12/13 años</a>
+                            <a class="text-blue-600 hover:underline" href="#">14/15 años</a>
+                            <a class="text-blue-600 hover:underline" href="#">16/17 años</a>
+                            <a class="text-blue-600 hover:underline" href="#">Mayores de edad</a>
+                        </nav>
+                    </div>
+
+                    <div class="w-full mb-4 flex items-center justify-start gap-2">
+                        <h2 class="font-poppins font-semibold text-blue-900 text-2xl">Genero:</h2>
+                        <p class="font-poppins text-2xl">Masculino</p>
+                    </div>
+
+                    <div class="w-full mb-4 flex items-center justify-start gap-2">
+                        <h2 class="font-poppins font-semibold text-blue-900 text-2xl">Fecha:</h2>
+                        <p class="font-poppins text-2xl">31-12-2023</p>
+                    </div>
+
+                    <div class="mb-4 w-full flex items-start justify-start gap-3">
+                        <h2 class="font-poppins font-semibold text-blue-900 text-2xl">Jueces:</h2>
+                        <ul class="font-poppins text-xl">
+                            <li>Juez 1</li>
+                            <li>Juez 2</li>
+                            <li>Juez 3</li>
+                            <li>Juez 4</li>
+                            <li>Juez 5</li>
+                        </ul>
+                    </div>
+
+                </article>
+                <div class="buttons w-full h-12 font-poppins">
+                    <button id="cerrar" class="w-full h-full bg-gray-500 hover:bg-gray-600 rounded-md text-gray-50 text-xl">
+                        Cerrar menu
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="../js/index.js"></script>
+</body>
+</html>
