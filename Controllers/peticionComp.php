@@ -39,16 +39,6 @@
 			$this->index();
 		}
 		
-		public function modificar($ID){
-			
-			$Competidores = new Competidores_model();
-			
-			$data["ID"] = $ID;
-			$data["Competidores"] = $Competidores->get_competidores($ID);
-			$data["titulo"] = "Peticion Competidores";
-			require_once "../../../../Views/views/administrativos/competidores/competidores_modifica.php";
-		}
-		
 		public function añadirComp($IDComp){
 
 			$Fed = $_POST['Fed'];
@@ -62,11 +52,8 @@
 			$Competidor->añadirComp($Fed, $CI, $name, $apell, $fnac, $sexo);
 			$data["titulo"] = "peticionCompet";
 
-			// Ahora eliminamos de la tabla al competidor agregado
 			$peticionComp = new peticionComp_model();
 			$peticionComp->eliminar($IDComp);
-			
-			// Vamo al index
 			$this->index();
 		}
 		
