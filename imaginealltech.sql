@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-09-2023 a las 07:12:26
+-- Tiempo de generación: 05-11-2023 a las 01:36:19
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -29,6 +29,20 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `administrador` (
   `CI` int(8) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `categoria`
+--
+
+CREATE TABLE `categoria` (
+  `ID` int(3) NOT NULL,
+  `IDT` int(11) NOT NULL,
+  `nombreCat` varchar(30) NOT NULL,
+  `cantCompetidores` int(1) NOT NULL,
+  `grupos` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -67,7 +81,9 @@ CREATE TABLE `competidor` (
 --
 
 INSERT INTO `competidor` (`ID`, `CI`, `Nombre`, `Apellido`, `Fnac`, `Sexo`, `Escuela`, `Dojo`) VALUES
-(7, 54077285, 'Ezequiel', 'Quintana', '2004-05-01', 'Masculino', 'Escuelita', 'Escuelota');
+(36, 11111111, 'Matasd', 'Alvarez', '2004-05-01', 'Masculino', 'asjdasdj', 'asjdasdj'),
+(43, 12345678, 'Alter', 'Olsztyn', '2004-05-01', 'Masculino', 'LaFederacion', 'LaFederacion'),
+(44, 12343214, 'Holaaa', 'ComoEstas', '2004-05-01', 'Masculino', 'hskdhadahd', 'hskdhadahd');
 
 -- --------------------------------------------------------
 
@@ -150,6 +166,25 @@ CREATE TABLE `personatelefono` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `peticioncompetidor`
+--
+
+CREATE TABLE `peticioncompetidor` (
+  `IDComp` int(5) NOT NULL,
+  `CIEnc` int(8) NOT NULL,
+  `nameEnc` varchar(30) NOT NULL,
+  `apellEnc` varchar(30) NOT NULL,
+  `Fed` varchar(50) NOT NULL,
+  `CI` int(8) NOT NULL,
+  `name` varchar(30) NOT NULL,
+  `apell` varchar(30) NOT NULL,
+  `sexo` set('Masculino','Femenino','Otro','') NOT NULL,
+  `fnac` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `posee`
 --
 
@@ -168,6 +203,29 @@ CREATE TABLE `tiene` (
   `CI_adm` int(8) DEFAULT NULL,
   `ID` int(8) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `torneo`
+--
+
+CREATE TABLE `torneo` (
+  `IDT` int(11) NOT NULL,
+  `nombre` varchar(30) NOT NULL,
+  `cantJueces` int(1) NOT NULL,
+  `genero` set('Masculino','Femenino','Otro','') NOT NULL,
+  `fecha` date NOT NULL,
+  `estado` set('En curso','Pendiente','','') NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `torneo`
+--
+
+INSERT INTO `torneo` (`IDT`, `nombre`, `cantJueces`, `genero`, `fecha`, `estado`) VALUES
+(1, 'Titulo del torneo', 5, 'Masculino', '2004-05-01', 'Pendiente'),
+(6, 'Matias Tournament', 7, 'Femenino', '2023-12-31', 'Pendiente');
 
 -- --------------------------------------------------------
 
@@ -192,7 +250,6 @@ INSERT INTO `usuario` (`ID`, `Nombre`, `Contraseña`, `Rol`) VALUES
 (3, 'Nico', 'nico', 'Administrador'),
 (4, 'Lucas', 'lucas', 'Administrador'),
 (5, 'Franco', 'franco', 'Administrador'),
-
 (6, 'Juez1', 'juez1', 'Juez'),
 (7, 'Juez2', 'juez2', 'Juez'),
 (8, 'Juez3', 'juez3', 'Juez'),
@@ -210,6 +267,13 @@ INSERT INTO `usuario` (`ID`, `Nombre`, `Contraseña`, `Rol`) VALUES
 --
 ALTER TABLE `administrador`
   ADD KEY `CI` (`CI`);
+
+--
+-- Indices de la tabla `categoria`
+--
+ALTER TABLE `categoria`
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `torneo_fk` (`IDT`);
 
 --
 -- Indices de la tabla `competencia`
@@ -269,6 +333,13 @@ ALTER TABLE `personatelefono`
   ADD KEY `CI` (`CI`);
 
 --
+-- Indices de la tabla `peticioncompetidor`
+--
+ALTER TABLE `peticioncompetidor`
+  ADD PRIMARY KEY (`IDComp`),
+  ADD UNIQUE KEY `CI` (`CI`);
+
+--
 -- Indices de la tabla `posee`
 --
 ALTER TABLE `posee`
@@ -281,6 +352,12 @@ ALTER TABLE `tiene`
   ADD KEY `CI_adm` (`CI_adm`);
 
 --
+-- Indices de la tabla `torneo`
+--
+ALTER TABLE `torneo`
+  ADD PRIMARY KEY (`IDT`);
+
+--
 -- Indices de la tabla `usuario`
 --
 ALTER TABLE `usuario`
@@ -289,6 +366,12 @@ ALTER TABLE `usuario`
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
+
+--
+-- AUTO_INCREMENT de la tabla `categoria`
+--
+ALTER TABLE `categoria`
+  MODIFY `ID` int(3) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `competencia`
@@ -300,13 +383,25 @@ ALTER TABLE `competencia`
 -- AUTO_INCREMENT de la tabla `competidor`
 --
 ALTER TABLE `competidor`
-  MODIFY `ID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `ID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+
+--
+-- AUTO_INCREMENT de la tabla `peticioncompetidor`
+--
+ALTER TABLE `peticioncompetidor`
+  MODIFY `IDComp` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=133;
+
+--
+-- AUTO_INCREMENT de la tabla `torneo`
+--
+ALTER TABLE `torneo`
+  MODIFY `IDT` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `ID` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `ID` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Restricciones para tablas volcadas
@@ -317,6 +412,12 @@ ALTER TABLE `usuario`
 --
 ALTER TABLE `administrador`
   ADD CONSTRAINT `administrador_ibfk_1` FOREIGN KEY (`CI`) REFERENCES `persona` (`CI`);
+
+--
+-- Filtros para la tabla `categoria`
+--
+ALTER TABLE `categoria`
+  ADD CONSTRAINT `torneo_fk` FOREIGN KEY (`IDT`) REFERENCES `torneo` (`IDT`);
 
 --
 -- Filtros para la tabla `elige`
