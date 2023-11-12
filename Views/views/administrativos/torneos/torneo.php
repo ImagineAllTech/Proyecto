@@ -76,14 +76,14 @@ if (empty($_SESSION["id"])) {
                         echo '</div>';
                         echo '    <article class="w-full flex flex-col items-start justify-start">';
                         echo '        <div class="mb-4 w-full flex flex-row-reverse items-center justify-start gap-3">';
-                        echo '            <form method="post" action="../../../../Models/enrutador.php?c=categoria&a=index&='. $dato["IDT"] .'" class="flex flex-col font-poppins items-start justify-start text-xl">';
+                        echo '            <form method="post" action="../../../../Models/enrutador.php?c=torneo&a=verCats&ID='.$dato["IDT"].'" class="flex flex-col font-poppins items-start justify-start text-xl">';
                         // echo '                <input name="cat" class="text-blue-600 hover:underline" href="../../../../Models/enrutador.php?c=categoria&a=index&='. $dato["IDT"] .'">12/13 años</input>';
                         
-                        echo '                  <select name="genero" class="w-full bg-transparent border-b outline-none py-2 px- text-gray-900 font-bricolage text-xl border-blue-800 origin-top-left" required>';
-                        echo '                      <option value="13">12/13 años</option>';
-                        echo '                      <option value="15">14/15 años</option>';
-                        echo '                      <option value="17">16/17 años</option>';
-                        echo '                      <option value="18">Mayores</option>';
+                        echo '                  <select name="categoria" class="w-full bg-transparent border-b outline-none py-2 px- text-gray-900 font-bricolage text-xl border-blue-800 origin-top-left" required>';
+                        echo '                      <option value="12-13">12/13 años</option>';
+                        echo '                      <option value="14-15">14/15 años</option>';
+                        echo '                      <option value="16-17">16/17 años</option>';
+                        echo '                      <option value="+18">Mayores</option>';
                         echo '                  </select>';
                         echo '            <h2 class="font-poppins font-semibold text-blue-900 text-2xl">Categorias:</h2>';
                         
@@ -112,7 +112,7 @@ if (empty($_SESSION["id"])) {
 
                         echo '    </article>';
                         echo '    <div class="buttons w-full flex flex-col h-24 gap-2 font-poppins">';
-                        echo '        <input type="submit" class="cerrar w-full h-full bg-blue-500 hover:bg-blue-600 rounded-md text-gray-50 text-xl flex items-center justify-center">';
+                        echo '        <input type="submit" class="enviar w-full h-full bg-blue-500 hover:bg-blue-600 rounded-md text-gray-50 text-xl flex items-center justify-center">';
                         echo '        <button class="cerrar w-full h-full bg-gray-500 hover:bg-gray-600 rounded-md text-gray-50 text-xl">';
                         echo '            Cerrar menu';
                         echo '        </button>';
