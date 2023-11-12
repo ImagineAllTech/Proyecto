@@ -87,58 +87,99 @@ class Torneo_model
 
 	public function añadirComp($ID, $CI, $categoria) {
 		$exist = $this->db->query("SELECT CI FROM Competidor WHERE CI = '$CI'");
-	
+
+		// Contador de competidores
+		$result = $this->db->query("SELECT COUNT(CI) as count FROM Forma WHERE IDT = '$ID'");
+		if ($result) {
+			$row = $result->fetch_assoc();
+			$cantCompetidores = $row['count'];
+		}
+
 		// Compruebo si el competidor esta en la tabla de competidor
 		if ($datos = $exist->fetch_object()) {
 			$_SESSION["CI"] = $datos->CI;
+			
+			$existCI = $this->db->query("SELECT CI FROM Forma WHERE CI = '$CI'");
+			if($datos = $exist->fetch_object()){
+				$_SESSION["CI"] = $datos->CI;
 
-			$existG = $this->db->query("SELECT COUNT(*) as count FROM Forma WHERE IDT = '$ID'");
-			$count = $existG->fetch_object()->count;
+				$existG = $this->db->query("SELECT COUNT(IDG) as count FROM Grupo WHERE IDT = '$ID'");
+				$count = $existG->fetch_object()->count;
 
-			if($count == 0){
-    			// No existe ningún grupo con esa IDT
-				$crearGrupo = $this->db->query("INSERT INTO Grupo ()");
+				if($count == 0){
+					$crearGrupo = $this->db->query("INSERT INTO Grupo (IDT) VALUES('$ID')");
+					$idGrupo = $this->db->insert_id;
 
-				$resultado = $this->db->query("INSERT INTO Forma (ID, CI) VALUES('$ID', '$CI')");
+					$resultado = $this->db->query("INSERT INTO Forma (IDT, CI, IDG) VALUES('$ID', '$CI', '$idGrupo')");
 
+				} else if($count == 1){
 
+					if($cantCompetidores < 4){
+						$idGrupoQuery = $this->db->query("SELECT IDG FROM grupo WHERE IDT = '$ID'");
+						$idGrupoObj = $idGrupoQuery->fetch_object();
+						$idGrupo = $idGrupoObj->IDG;
+						$resultado = $this->db->query("INSERT INTO Forma (IDT, CI, IDG) VALUES('$ID', '$CI', '$idGrupo')");
+					
+					} else{
+						$crearGrupo = $this->db->query("INSERT INTO Grupo (IDT) VALUES('$ID')");
+						$idGrupo = $this->db->insert_id;
 
-			} else if($count == 1){
-    		// Existe exactamente un grupo con esa IDT
-			} else if($count == 2){
-    		// Existen exactamente dos grupos con esa IDT
+						$resultado = $this->db->query("INSERT INTO Forma (IDT, CI, IDG) VALUES('$ID', '$CI', '$idGrupo')");
+					}
+				
+
+				} else if ($count == 2) {
+					// Obtener grupos
+					$idGrupo1Result = $this->db->query("SELECT IDG FROM Grupo WHERE IDT = '$ID' LIMIT 1");
+					$idGrupo1Obj = $idGrupo1Result->fetch_object();
+					$idGrupo1 = $idGrupo1Obj->IDG;
+
+					$idGrupo2Result = $this->db->query("SELECT IDG FROM Grupo WHERE IDT = '$ID' ORDER BY IDG DESC LIMIT 1");
+					$idGrupo2Obj = $idGrupo2Result->fetch_object();
+					$idGrupo2 = $idGrupo2Obj->IDG;
+
+					// Obtener la cantidad de competidores en cada grupo
+					$competidoresGrupo1 = $this->db->query("SELECT COUNT(*) as count FROM Forma WHERE IDG = '$idGrupo1'")->fetch_object()->count;
+					$competidoresGrupo2 = $this->db->query("SELECT COUNT(*) as count FROM Forma WHERE IDG = '$idGrupo2'")->fetch_object()->count;
+
+					// Comparar las cantidades y determinar en cuál grupo agregar al competidor
+					if ($competidoresGrupo1 < $competidoresGrupo2) {
+						$idGrupo = $idGrupo1;
+					} elseif ($competidoresGrupo2 < $competidoresGrupo1) {
+						$idGrupo = $idGrupo2;
+					} else {
+						// Si ambos grupos tienen la misma cantidad, elige uno al azar
+						$idGrupo = ($cantCompetidores % 2 == 0) ? $idGrupo1 : $idGrupo2;
+					}
+				
+					// Agregar al competidor al grupo seleccionado
+					$resultado = $this->db->query("INSERT INTO Forma (IDT, CI, IDG) VALUES('$ID', '$CI', '$idGrupo')");
+				
+					
+
+				} else {
+					echo "Hay un problema con los grupos";
+				}
+			
+				$this->db->query("UPDATE Categoria SET cantCompetidores = '$cantCompetidores' WHERE IDT = '$ID' AND nombreCat = '$categoria'");
+			
 			} else {
-    		// Existen más de dos grupos con esa IDT
-			}
+				// Si el competidor no existe en la tabla de Competidores
+				echo '
+					<div class="w-full flex">
+						<div class="w-4/12 text-2xl m-auto flex items-center justify-center h-10 bg-red-300 border border-red-400 font-semibold text-red-900 rounded-md">
+							<h3 class="text-center w-full">El competidor ya esta registrado en un torneo</h3>
+						</div>
+					</div>
+				';
 
-			
-			
-			$resultado = $this->db->query("INSERT INTO Forma (ID, CI) VALUES('$ID', '$CI')");
-	
-			$this->db->query("UPDATE Categoria SET cantCompetidores = cantCompetidores + 1 WHERE IDT = '$ID' AND nombreCat = '$categoria'");
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+			}
 		} else {
-			// Si el competidor no existe en la tabla de Competidores
+			// Si el competidor ya esta en un torneo
 			echo '
 			<div class="w-full flex">
 				<div class="w-4/12 text-2xl m-auto flex items-center justify-center h-10 bg-red-300 border border-red-400 font-semibold text-red-900 rounded-md">
-					<h3 class="text-center w-full">El competidor no existe, añade uno existente</h3>
+					<h3 class="text-center w-full">El competidor ya esta en un torneo</h3>
 				</div>
 			</div>
 			';
