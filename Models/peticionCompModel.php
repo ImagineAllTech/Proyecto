@@ -36,7 +36,7 @@
 		
 		public function insertar($CIEnc, $nameEnc, $apellEnc, $Fed, $CI, $name, $apell, $fnac, $sexo){
 			
-			$exist = $this->db->query("SELECT INTO peticionCompetidor WHERE CI = '$CI'");
+			$exist = $this->db->query("SELECT * FROM peticioncompetidor WHERE CI = '$CI'");
 
 			$CI = $_POST["CI"];
 

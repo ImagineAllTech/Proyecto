@@ -25,8 +25,6 @@ iconoMenu.addEventListener("click", () => {
     }
 });
 
-// Mobile
-
 const iconoMobile = document.querySelector("#iconoMobile");
 
 iconoMobile.addEventListener('click', () => {

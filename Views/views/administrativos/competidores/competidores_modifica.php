@@ -34,7 +34,7 @@ if(empty($_SESSION["id"])){
 
             <form name="nuevo" 
             method="POST" 
-			action="../competidores/enrutador.php?c=competidores&a=actualizar"
+			action="../../Models/enrutador.php?c=competidores&a=actualizar"
             autocomplete="off"
             class="flex flex-col items-center justify-center w-full gap-8 w-full">
 

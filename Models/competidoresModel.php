@@ -33,6 +33,7 @@
         return $competidores;
     }
 }
+
 		
 		public function insertar($CI, $Nombre, $Apellido, $Fnac, $Sexo, $Escuela, $Dojo){
 			

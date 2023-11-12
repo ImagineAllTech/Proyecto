@@ -112,6 +112,6 @@ if(empty($_SESSION["id"])){
     </main>
 
     <script defer src="../../../assets/js/dashboard.js"></script>
-    <script src="../../../components/menu.js"></script>
+    <script src="../../../assets/components/menu.js"></script>
 </body>
 </html>

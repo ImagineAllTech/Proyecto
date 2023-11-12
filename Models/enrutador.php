@@ -6,6 +6,7 @@ require_once "config/database.php";
 require_once "../Controllers/competidores.php";
 require_once "../Controllers/peticionComp.php";
 require_once "../Controllers/torneo.php";
+require_once "../Controllers/categorias.php";
 
 if(isset($_GET['c'])){
 		

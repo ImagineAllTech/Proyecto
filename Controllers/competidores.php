@@ -45,7 +45,7 @@
 			$data["ID"] = $ID;
 			$data["Competidores"] = $Competidores->get_competidores($ID);
 			$data["titulo"] = "Competidores";
-			require_once "../../../../Views/views/administrativos/competidores/competidores_modifica.php";
+			require_once "../Views/views/administrativos/competidores/competidores_modifica.php";
 		}
 		
 		public function actualizar(){
