@@ -1,39 +1,56 @@
 <?php
 	
-	class Torneo_model {
+	class Categorias_model {
 		
 		private $db;
-		private $Torneo;
+		private $Categoria;
 		
 		public function __construct(){
 			$this->db = Conectar::conexion();
-			$this->Torneo = array();
+			$this->Categoria = array();
 		}
 		
-		public function get_torneo($ID = null)
+		public function get_categoria($ID = null)
 {
-    $sql = "SELECT * FROM Torneo";
+    $sql = "SELECT * FROM Categoria";
 
     // Si se proporciona un ID, ajusta la consulta para obtener un competidor específico
     if ($ID !== null) {
-        $sql .= " WHERE ID='$ID' LIMIT 1";
+        $sql .= " WHERE IDT='$ID' LIMIT 1";
     }
 
     $resultado = $this->db->query($sql);
 
     if ($ID !== null) {
-        // Si se proporcionó un ID, devolver el resultado directamente
+        // Si se proporcionó un ID, devolver el resultado directament
         return $resultado->fetch_assoc();
     } else {
         // Si no se proporcionó un ID, obtener todos los competidores
-        $torneos = array();
+        $categorias = array();
         while ($row = $resultado->fetch_assoc()) {
-            $torneos[] = $row;
+            $categorias[] = $row;
         }
-        return $torneos;
+        return $categorias;
     }
 }
-		
+
+
+public function obtenerCategoriaPorTorneoID($ID) {
+
+	$categorias = array();
+
+	$consulta = $this->db->query("SELECT ID, nombreCat, cantCompetidores FROM categoria WHERE IDT = $ID");
+
+	// Manejar errores si es necesario
+
+	while ($fila = $consulta->fetch_assoc()) {
+		$categorias[] = $fila;
+	}
+
+	return $categorias;
+
+}
+
 		public function insertar($nombre, $cantJueces, $estado, $fecha, $genero){
 
 			$exist = $this->db->query("SELECT nombre FROM Torneo WHERE nombre='$nombre'");
@@ -51,6 +68,7 @@
 				</div>';
 
 			}else{
+				
 				$resultado = $this->db->query("INSERT INTO Torneo (nombre, cantJueces, estado, fecha, genero) VALUES ('$nombre', '$cantJueces', '$estado', '$fecha', '$genero')");
 			}
 		}
