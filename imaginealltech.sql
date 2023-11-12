@@ -27,6 +27,10 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `administrador`
 --
 
+CREATE DATABASE `imaginealltech`;
+
+USE `imaginealltech`;
+
 CREATE TABLE `administrador` (
   `CI` int(8) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
