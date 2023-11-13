@@ -121,7 +121,6 @@
 				$cantCompetidores = $row['count'];
 			}
 
-			echo "'$cantCompetidores'";
 
 			// Aca compruebo si ya hay alguna llave generada
 			if($datos = $exist->fetch_object()){
