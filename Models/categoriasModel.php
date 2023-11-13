@@ -177,7 +177,7 @@
 						$datosLlaves[] = $fila;
 
 						// Insertar en la tabla Llave
-						$this->db->query("INSERT INTOllaves (IDG, IDT, CI, IDCat, Color) VALUES ('$IDG', '$IDT', '$CI', '$ID', '$Color')");
+						$this->db->query("INSERT INTO llaves (IDG, IDT, CI, IDCat, Color) VALUES ('$IDG', '$IDT', '$CI', '$ID', '$Color')");
             		}
 
 

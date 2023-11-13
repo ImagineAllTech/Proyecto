@@ -1,13 +1,3 @@
-<?php
-
-session_start();
-
-if (empty($_SESSION["id"])) {
-    header("location: ../../../../Views/views/login/login.php");
-}
-
-?>
-
 <!DOCTYPE html>
 <html id="html" class="" lang="en">
 
@@ -33,15 +23,15 @@ if (empty($_SESSION["id"])) {
         </figure>
 
         <nav class="flex flex-col items-center justify-center gap-10 text-gray-100 text-2xl">
-            <a href="#" title="Registar competidor"><i class="fa-solid fa-rectangle-list"></i></a>
-            <a href="#" title="Petiicon de competidores"><i class="fa-solid fa-user-plus"></i></a>
-            <a href="#" title="Competidores"><i class="fa-solid fa-user-ninja"></i></a>
-            <a href="#" title="Torneo"><i class="fa-solid fa-trophy"></i></a>
-            <a href="#" title="Jueces"><i class="fa-solid fa-gavel"></i></a>
+            <a href="../Views/views/publico/formularios/competidor/competidor.php" title="Registar competidor"><i class="fa-solid fa-rectangle-list"></i></a>
+            <a href="enrutador.php?c=competidores" title="Petiicon de competidores"><i class="fa-solid fa-user-plus"></i></a>
+            <a href="enrutador.php?c=peticionComp" title="Competidores"><i class="fa-solid fa-user-ninja"></i></a>
+            <a href="enrutador.php?c=torneo" title="Torneo"><i class="fa-solid fa-trophy"></i></a>
+            <a href="../Views/views/jueces/jueces.php" title="Jueces"><i class="fa-solid fa-gavel"></i></a>
         </nav>
 
         <div class="flex flex-col items-center justify-center gap-10 text-gray-100 text-2xl">
-            <a href="#" title="Desconectarse"><i class="fa-solid fa-right-to-bracket"></i></a>
+            <a href="../../../Models/enrutador.php?c=usuario&a=cerrarSesion" title="Desconectarse"><i class="fa-solid fa-right-to-bracket"></i></a>
         </div>
     </header>
 

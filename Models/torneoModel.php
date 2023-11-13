@@ -62,7 +62,8 @@ class Torneo_model
 			$categorias = ['12-13', '14-15', '16-17', '+18'];
 			foreach ($categorias as $categoria) {
 				$res = $this->db->query("INSERT INTO categoria (IDT, nombreCat) VALUES ('$idTorneo', '$categoria')");
-				$resul = $this->db->query("INSERT INTO grupo (IDT, nombreCat) VALUES ('$idTorneo', '$categoria')");
+				$idCat = $this->db->insert_id;
+				$resul = $this->db->query("INSERT INTO grupo (IDT, IDCat) VALUES ('$idTorneo', '$idCat')");
 
 			}
 
@@ -73,6 +74,7 @@ class Torneo_model
 	public function eliminar($ID)
 	{
 
+		$resultado = $this->db->query("DELETE FROM grupo WHERE IDT = '$ID'");
 		$resultado = $this->db->query("DELETE FROM categoria WHERE IDT = '$ID'");
 		$resultado = $this->db->query("DELETE FROM torneo WHERE IDT = '$ID'");
 

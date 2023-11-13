@@ -52,7 +52,7 @@
 
 				
 			}else{
-				$resultado = $this->db->query("INSERT INTO peticionCompetidor (CIEnc, nameEnc, apellEnc, Fed, CI, name, apell, fnac, sexo) VALUES ('$CIEnc', '$nameEnc', '$apellEnc', '$Fed', '$CI', '$name', '$apell', '$fnac', '$sexo')");
+				$resultado = $this->db->query("INSERT INTO peticioncompetidor (CIEnc, nameEnc, apellEnc, Fed, CI, name, apell, fnac, sexo) VALUES ('$CIEnc', '$nameEnc', '$apellEnc', '$Fed', '$CI', '$name', '$apell', '$fnac', '$sexo')");
 			}
 		}
 
@@ -64,7 +64,7 @@
 		
 		public function eliminar($ID){
 			
-			$resultado = $this->db->query("DELETE FROM peticionCompetidor WHERE IDComp = '$ID'");
+			$resultado = $this->db->query("DELETE FROM peticioncompetidor WHERE IDComp = '$ID'");
 			
 		}
 		

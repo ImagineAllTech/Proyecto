@@ -21,8 +21,8 @@
                 <a href="../../../index.php" class="font-poppins text-gray-600 hover:shadow-md transition-all duration-300 font-black w-28 rounded-full h-10 border-2 grid place-content-center">VOLVER</a>
             </header>
 
-            <form 
-            action="#"
+            <form validar
+            action="../../../Models/enrutador.php?c=usuario&a=validar"
             method="post"
             class="w-full"
             >
@@ -32,6 +32,7 @@
                 </div>
 
                 <!-- <?php
+
                 include("../../../Models/config/database.php");
                 include("../../../Controllers/iniciarSesion.php");
                 

@@ -1,10 +1,3 @@
-<?php
-session_start();
-
-if(empty($_SESSION["id"])){
-    header("location: ../../../../Views/views/login/login.php");
-}
-?>
 <!DOCTYPE html>
 <html id="html" class="" lang="en">
 <head>
