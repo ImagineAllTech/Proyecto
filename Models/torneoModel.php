@@ -124,8 +124,6 @@ class Torneo_model
 				$IDT_result = $IDT_query->fetch_assoc();
 				$IDT = $IDT_result['IDT'];
 
-				echo "'$IDT'";
-				echo "'$ID'";
 
 				if($count == 0){
 					$crearGrupo = $this->db->query("INSERT INTO grupo (IDT, IDCat) VALUES('$IDT', '$ID')");

@@ -5,7 +5,6 @@
 		public function __construct(){
 			require_once "torneoModel.php";
 			require_once "categoriasModel.php";
-			require_once "rondaModel.php";
 		}
 		
 		public function index(){

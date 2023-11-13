@@ -141,7 +141,6 @@
 				// Si no existe una llave
 
 				if($cantCompetidores >= 2 && $cantCompetidores <= 3){
-					echo '2-3 competidores';
 					// Obtengo la información de los competidores y asigno "AKA" a la columna "Color"
 					$grupo = $this->db->query("SELECT IDG, IDT, CI, 'AKA' as Color FROM forma WHERE IDCat = '$ID'");
             
@@ -161,7 +160,6 @@
 
 					
 				} else if ($cantCompetidores = 4 ){
-					echo '4 comps';
 					// Obtengo la información de los competidores
 					$grupo = $this->db->query("SELECT IDG, IDT, CI FROM forma WHERE IDCat = '$ID'");
 
@@ -185,7 +183,6 @@
 
 
 				} elseif ($cantCompetidores = 5) {
-					echo '5 comps';
 					// Obtengo la información de los competidores
 					$grupo = $this->db->query("SELECT IDG, IDT, CI FROM forma WHERE IDCat = '$ID'");
 		
@@ -209,7 +206,6 @@
 					}
 
 				} if ($cantCompetidores >= 6 && $cantCompetidores <= 10) {
-					echo '6-10 comps';
 					
 					// Obtengo la información de los competidores
 					$grupo = $this->db->query("SELECT IDG, IDT, CI FROM forma WHERE IDCat = '$ID'");
