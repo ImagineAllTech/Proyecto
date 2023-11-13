@@ -58,7 +58,7 @@
 
 		public function añadirComp($Fed, $CI, $name, $apell, $fnac, $sexo){
 			
-			$resultado = $this->db->query("INSERT INTO Competidor (CI, Nombre, Apellido, Fnac, Sexo, Escuela, Dojo) VALUES ('$CI', '$name', '$apell', '$fnac', '$sexo', '$Fed', '$Fed')");		
+			$resultado = $this->db->query("INSERT INTO competidor (CI, Nombre, Apellido, Fnac, Sexo, Escuela, Dojo) VALUES ('$CI', '$name', '$apell', '$fnac', '$sexo', '$Fed', '$Fed')");		
 		}
 		
 		

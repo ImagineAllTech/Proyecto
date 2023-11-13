@@ -12,7 +12,7 @@
 		
 		public function get_competidores($ID = null)
 {
-    $sql = "SELECT * FROM Competidor";
+    $sql = "SELECT * FROM competidor";
 
     // Si se proporciona un ID, ajusta la consulta para obtener un competidor específico
     if ($ID !== null) {
@@ -35,9 +35,10 @@
 }
 
 		
+
 		public function insertar($CI, $Nombre, $Apellido, $Fnac, $Sexo, $Escuela, $Dojo){
 			
-			$exist = $this->db->query("SELECT CI FROM Competidor WHERE CI='$CI'");
+			$exist = $this->db->query("SELECT CI FROM competidor WHERE CI='$CI'");
 
 			$CI = $_POST["CI"];
 
@@ -53,18 +54,18 @@
 
 				
 			}else{
-				$resultado = $this->db->query("INSERT INTO Competidor (CI, Nombre, Apellido, Fnac, Sexo, Escuela, Dojo) VALUES ('$CI', '$Nombre', '$Apellido', '$Fnac', '$Sexo', '$Escuela', '$Dojo')");
+				$resultado = $this->db->query("INSERT INTO competidor (CI, Nombre, Apellido, Fnac, Sexo, Escuela, Dojo) VALUES ('$CI', '$Nombre', '$Apellido', '$Fnac', '$Sexo', '$Escuela', '$Dojo')");
 			}
 		}
 
 		public function modificar($ID, $CI, $Nombre, $Apellido, $Fnac, $Sexo, $Escuela, $Dojo){
 			
-			$resultado = $this->db->query("UPDATE Competidor SET CI='$CI', Nombre='$Nombre', Apellido='$Apellido', Fnac='$Fnac', Sexo='$Sexo', Escuela='$Escuela', Dojo='$Dojo'  WHERE ID = '$ID'");			
+			$resultado = $this->db->query("UPDATE competidor SET CI='$CI', Nombre='$Nombre', Apellido='$Apellido', Fnac='$Fnac', Sexo='$Sexo', Escuela='$Escuela', Dojo='$Dojo'  WHERE ID = '$ID'");			
 		}
 		
 		public function eliminar($ID){
 			
-			$resultado = $this->db->query("DELETE FROM Competidor WHERE ID = '$ID'");
+			$resultado = $this->db->query("DELETE FROM competidor WHERE ID = '$ID'");
 			
 		}
 		
