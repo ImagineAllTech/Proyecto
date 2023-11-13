@@ -5,6 +5,7 @@
 		public function __construct(){
 			require_once "torneoModel.php";
 			require_once "categoriasModel.php";
+			require_once "rondaModel.php";
 		}
 		
 		public function index(){
@@ -47,6 +48,14 @@
 			$this->index();
 		}	
 
+
+		public function empezarTorneo($ID){
+			$torneoModel = new Torneo_model();
+
+			$torneo = $torneoModel->iniciarTorneo($ID);
+			$data["titulo"] = "Torneo";
+        }
+
 		// Funcion para ver las categorias dependiendo la id del torneo
 		public function verCats($ID) {
 			$categoriasModel = new Categorias_model();
@@ -71,12 +80,19 @@
 		public function añadirComp($ID){
 			
 			$CI = $_POST["CI"];
-			$categoria = $_POST["categoria"];
-
+			
 			$Competidor = new Torneo_model();
-			$Competidor->añadirComp($ID, $CI, $categoria);
+			$Competidor->añadirComp($ID, $CI);
 			$data["titulo"] = "Competidores";
-			$this->verCats($ID);
+			$this->index();
 		}
+
+		public function eliminarComp($ID){
+			
+			$IDT = new Torneo_model();
+			$IDT->eliminarComp($ID);
+			$data["titulo"] = "Torneo";
+			$this->index();
+		}	
 	}
 	
