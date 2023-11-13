@@ -17,11 +17,14 @@ btnModificarElements.forEach((btnModificar, index) => {
     });
 });
 
-btnCerrarElements.forEach((btnCerrar, index) =>{
+btnCerrarElements.forEach((btnCerrar, index) => {
     btnCerrar.addEventListener('click', () => {
-        forms.classList.add('hidden');
-        
+        // Oculta todos los formularios
+        formSections.forEach((forms) => {
+            forms.classList.add('hidden');
+        });
+
         // Muestra el formulario correspondiente
         formSections[index].classList.add('hidden');
-    })
+    });
 });
