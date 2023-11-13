@@ -31,11 +31,11 @@
                     <p class="hidden md:flex font-poppins text-lg text-gray-500">Ingresa en tu cuenta con usuario y contraseña</p>
                 </div>
 
-                <?php
+                <!-- <?php
                 include("../../../Models/config/database.php");
                 include("../../../Controllers/iniciarSesion.php");
                 
-                ?>
+                ?> -->
 
                 <div class="form__container flex flex-col items-center justify-center mt-4 gap-6">
 
