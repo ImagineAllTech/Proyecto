@@ -41,7 +41,7 @@ if(empty($_SESSION["id"])){
             <a href="../../../../Models/enrutador.php?c=competidores&a=nuevo"
                 class="px-6 py-2 rounded bg-blue-700 text-white text-xl hover:bg-blue-800 mb-8">Agregar Competidor</a>
 
-            <table class="table-auto border border-slate-300" cellpadding="6" cellspacing="0">
+            <table class="mb-8 table-auto border border-slate-300" cellpadding="6" cellspacing="0">
                 
                 <thead>
                     <tr>
