@@ -24,27 +24,35 @@ if (empty($_SESSION["id"])) {
     <script src="https://kit.fontawesome.com/cea33d77ef.js" crossorigin="anonymous"></script>
 </head>
 
-<body class="body flex flex-col justify-start items-end w-full min-h-screen font-montserrat">
+<body class="bg-slate-950 flex min-h-screen w-full">
+    
+    <div style="width: 6vw;"></div>
+    <header class="fixed top-0 left-0 py-6 flex flex-col items-center justify-between h-screen" style="width: 6vw;">
+        <figure class="w-full flex items-center justify-center">
+            <img src="../../Views/assets/img/Logotype.svg" alt="CUKLogo" class="w-7/12">
+        </figure>
 
-    <!-- Menus -->
+        <nav class="flex flex-col items-center justify-center gap-10 text-gray-100 text-2xl">
+            <a href="#" title="Registar competidor"><i class="fa-solid fa-rectangle-list"></i></a>
+            <a href="#" title="Petiicon de competidores"><i class="fa-solid fa-user-plus"></i></a>
+            <a href="#" title="Competidores"><i class="fa-solid fa-user-ninja"></i></a>
+            <a href="#" title="Torneo"><i class="fa-solid fa-trophy"></i></a>
+            <a href="#" title="Jueces"><i class="fa-solid fa-gavel"></i></a>
+        </nav>
 
-    <div id="sidebar">
-
-    </div>
-
-    <main id="main-content" class="pl-7 pr-9 lg:sidebar-activo mt-24 lg:mt-24 flex flex-col items-start justify-start">
-
-        <div class="mb-8">
-            <h2 class="text-6xl text-blue-700 font-bold font-bricolage">
-                <?php echo $data["titulo"]; ?>
-            </h2>
+        <div class="flex flex-col items-center justify-center gap-10 text-gray-100 text-2xl">
+            <a href="#" title="Desconectarse"><i class="fa-solid fa-right-to-bracket"></i></a>
         </div>
+    </header>
 
-        <!-- <button id="añadirComp" class="px-6 py-2 rounded bg-blue-700 text-white text-xl hover:bg-blue-800 mb-8">
-            Añadir competidor
-        </button> -->
-        
-        <div class="w-full flex items-start justify-start flex-col">
+    <main class="p-2 pr-6 mb-8 min-h-screen" style="width: 94vw;">
+        <section class="mt-4 mb-4 w-full rounded-md h-full bg-gray-200 p-4 flex flex-col items-center justify-start">
+            <section class="flex items-start justify-between mb-12 w-full">
+                <div class="">
+                    <p class="font-poppins text-gray-700">Hola, te encuentras en</p>
+                    <h2 class="text-6xl text-blue-700 font-bold font-bricolage">Categorias Torneo</h2>
+                </div>
+            </section>
 
             <table class="table-auto border border-gray-800" cellpadding="6" cellspacing="0">
 
@@ -69,7 +77,7 @@ if (empty($_SESSION["id"])) {
                         echo "<td class='text-center'> <a class='hover:underline text-blue-600' href='../../../../../Models/enrutador.php?c=categoria&a=verGrupo&ID=".$dato["ID"]."'>Ver grupos</a> </td>";
                         echo "<td class='text-center'> <a class='hover:underline text-blue-600' href='../../../../Models/enrutador.php?c=categoria&a=grupos&ID='>Ver rondas</a> </td>";
                         echo "<td class='text-center'>" . $dato["cantCompetidores"] . "</td>";
-                        echo "<td class='text-center text-green-800'><button class='btnModificar'>Añadir</button></td>";
+                        echo "<td class='text-center text-green-800 font-semibold'><button class='btnModificar'>Añadir</button></td>";
                         echo "</tr>";
 
                         echo '<section id="popup" class=\'hidden popup forms fixed top-0 left-0 flex flex-col items-center justify-center w-full h-full\' style=\'background-color: rgba(0, 0, 0, 0.411);\'>';
@@ -124,12 +132,10 @@ if (empty($_SESSION["id"])) {
                 </tbody>
 
             </table>
-        </div>
-        </div>
+
+        </section>
     </main>
 
     <script defer src="../Views/assets/js/torneo.js"></script>
-    <script src="../Views/components/menu.js"></script>
 </body>
-
 </html>

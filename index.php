@@ -42,7 +42,7 @@
                         <a href="Views/views/publico/formularios/contacto/contacto.php"
                         class="w-full md:8/12 lg:w-6/12 h-12 bg-blue-700 text-white flex items-center justify-center hover:bg-blue-800 font-semibold rounded-full text-xl">Contacto</a>
                     
-                        <a href="http://imaginealltech.matiasmoreira1.repl.co"
+                        <a href="Group-site/index.html"
                         class="w-full md:8/12 lg:w-6/12 h-12 bg-blue-700 text-white flex items-center justify-center hover:bg-blue-800 font-semibold rounded-full text-xl">Visitar
                         IAT</a>
                 </nav>

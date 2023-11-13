@@ -24,24 +24,38 @@ if (empty($_SESSION["id"])) {
     <script src="https://kit.fontawesome.com/cea33d77ef.js" crossorigin="anonymous"></script>
 </head>
 
-<body class="body flex flex-col justify-start items-end w-full min-h-screen font-montserrat">
+<body class="bg-slate-950 flex min-h-screen w-full">
+    
+    <div style="width: 6vw;"></div>
+    <header class="fixed top-0 left-0 py-6 flex flex-col items-center justify-between h-screen" style="width: 6vw;">
+        <figure class="w-full flex items-center justify-center">
+            <img src="../../Views/assets/img/Logotype.svg" alt="CUKLogo" class="w-7/12">
+        </figure>
 
-    <!-- Menus -->
+        <nav class="flex flex-col items-center justify-center gap-10 text-gray-100 text-2xl">
+            <a href="#" title="Registar competidor"><i class="fa-solid fa-rectangle-list"></i></a>
+            <a href="#" title="Petiicon de competidores"><i class="fa-solid fa-user-plus"></i></a>
+            <a href="#" title="Competidores"><i class="fa-solid fa-user-ninja"></i></a>
+            <a href="#" title="Torneo"><i class="fa-solid fa-trophy"></i></a>
+            <a href="#" title="Jueces"><i class="fa-solid fa-gavel"></i></a>
+        </nav>
 
-    <div id="sidebar">
-
-    </div>
-
-    <main id="main-content" class="pl-7 pr-9 lg:sidebar-activo mt-24 lg:mt-24 flex flex-col items-start justify-start">
-
-        <div class="mb-8">
-            <h2 class="text-6xl text-blue-700 font-bold font-bricolage">Torneos</h2>
+        <div class="flex flex-col items-center justify-center gap-10 text-gray-100 text-2xl">
+            <a href="#" title="Desconectarse"><i class="fa-solid fa-right-to-bracket"></i></a>
         </div>
+    </header>
 
-        <div class="w-full flex items-start justify-start flex-col">
-            <a href="../../../../Models/enrutador.php?c=Torneo&a=nuevo"
-                class="px-6 py-2 rounded bg-blue-700 text-white text-xl hover:bg-blue-800 mb-8">Crear Torneo
-            </a>
+    <main class="p-2 pr-6 mb-8 min-h-screen" style="width: 94vw;">
+        <section class="mt-4 mb-4 w-full rounded-md h-full bg-gray-200 p-4 flex flex-col items-center justify-start">
+            <section class="flex items-start justify-between mb-12 w-full">
+                <div class="">
+                    <p class="font-poppins text-gray-700">Hola, te encuentras en</p>
+                    <h2 class="text-6xl text-blue-700 font-bold font-bricolage">Torneos</h2>
+                </div>
+                <a href="../../../../Models/enrutador.php?c=Torneo&a=nuevo"
+                    class="px-6 py-2 rounded bg-blue-700 text-white text-xl hover:bg-blue-800 mb-8">Crear Torneo
+                </a>
+            </section>
 
             <table class="table-auto border border-gray-800" cellpadding="6" cellspacing="0">
 
@@ -52,7 +66,7 @@ if (empty($_SESSION["id"])) {
                         <th class="border border-gray-800">Estado</th>
                         <th class="border border-gray-800">Fecha</th>
                         <th class="border border-gray-800">Genero</th>
-                        <th class="border border-gray-800">Editar</th>
+                        <th class="border border-gray-800">Info</th>
                         <th class="border border-gray-800">Borrar</th>
                     </tr>
                 </thead>
@@ -64,9 +78,8 @@ if (empty($_SESSION["id"])) {
                         echo "<td class='text-center'>" . $dato["estado"] . "</td>";
                         echo "<td class='text-center'>" . $dato["fecha"] . "</td>";
                         echo "<td class='text-center'>" . $dato["genero"] . "</td>";
-                        // echo "<td class='text-blue-700 font-bricolage font-bold text-center'><a href='../competidores/enrutador.php?c=competidores&a=modificar&ID=".$dato["IDComp"]."'>Modificar</a></td>";
-                        echo "<td><button class='btnModificar'>Modificar</button></td>";
-                        echo "<td class='text-blue-700 font-bricolage font-bold text-center'><a href='../../../../Models/enrutador.php?c=torneo&a=eliminar&ID=" . $dato["IDT"] . "'>Eliminar</a></td>";
+                        echo "<td class='text-center font-semibold text-blue-800'><button class='btnModificar'>Ver Informacion</button></td>";
+                        echo "<td class='text-blue-800 font-semibold text-center'><a href='../../../../Models/enrutador.php?c=torneo&a=eliminar&ID=" . $dato["IDT"] . "'>Eliminar</a></td>";
                         echo "</tr>";
 
                         echo '<section id="popup" class="popup forms hidden fixed top-0 left-0 flex flex-col items-center justify-center w-full h-full" style="background-color: rgba(0, 0, 0, 0.411)";>';       
@@ -77,15 +90,6 @@ if (empty($_SESSION["id"])) {
                         echo '    <article class="w-full flex flex-col items-start justify-start">';
                         echo '        <div class="mb-4 w-full flex flex-row-reverse items-center justify-start gap-3">';
                         echo '            <form method="post" action="../../../../Models/enrutador.php?c=torneo&a=verCats&ID='.$dato["IDT"].'" class="flex flex-col font-poppins items-start justify-start text-xl">';
-                        // echo '                <input name="cat" class="text-blue-600 hover:underline" href="../../../../Models/enrutador.php?c=categoria&a=index&='. $dato["IDT"] .'">12/13 años</input>';
-                        
-                        echo '                  <select name="categoria" class="w-full bg-transparent border-b outline-none py-2 px- text-gray-900 font-bricolage text-xl border-blue-800 origin-top-left" required>';
-                        echo '                      <option value="12-13">12/13 años</option>';
-                        echo '                      <option value="14-15">14/15 años</option>';
-                        echo '                      <option value="16-17">16/17 años</option>';
-                        echo '                      <option value="+18">Mayores</option>';
-                        echo '                  </select>';
-                        echo '            <h2 class="font-poppins font-semibold text-blue-900 text-2xl">Categorias:</h2>';
                         
                         echo '        </div>';
                         
@@ -112,7 +116,8 @@ if (empty($_SESSION["id"])) {
 
                         echo '    </article>';
                         echo '    <div class="buttons w-full flex flex-col h-24 gap-2 font-poppins">';
-                        echo '        <input type="submit" class="enviar w-full h-full bg-blue-500 hover:bg-blue-600 rounded-md text-gray-50 text-xl flex items-center justify-center">';
+                        echo '        <input type="submit" value="Ver Categorias" class="cursor-pointer enviar w-full h-full bg-blue-500 hover:bg-blue-600 rounded-md text-gray-50 text-xl flex items-center justify-center">';
+                        echo '        </input>';
                         echo '        <button class="cerrar w-full h-full bg-gray-500 hover:bg-gray-600 rounded-md text-gray-50 text-xl">';
                         echo '            Cerrar menu';
                         echo '        </button>';
@@ -125,14 +130,10 @@ if (empty($_SESSION["id"])) {
                 </tbody>
 
             </table>
-        </div>
-        </div>
+
+        </section>
+        <script src="../Views/assets/js/torneo.js"></script>
     </main>
 
-            <!-- <script src="../Views/assets/js/peticionComp.js"></script> -->
-
-            <script defer src="../Views/assets/js/torneo.js"></script>
-            <script src="../Views/components/menu.js"></script>
 </body>
-
 </html>
