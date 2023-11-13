@@ -15,7 +15,7 @@ class Usuarios_model
 	}
 
 	public function get_validar($usuario, $contraseña) {
-        $sql = "SELECT * FROM usuario WHERE Nombre='$usuario' AND Contraseña='$contraseña'";
+        $sql = "SELECT * FROM usuario WHERE Nombre='$usuario' AND Contrasena='$contraseña'";
         $resultado = $this->db->query($sql);
     
         if ($resultado->num_rows == 1) {
